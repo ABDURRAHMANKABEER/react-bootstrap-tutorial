@@ -1,0 +1,31 @@
+:root {
+  --section-overlay: rgba(0,0,0,0.7);
+  --background-overlay: rgba(0,0,0,0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.app {
+  background-size: cover;
+  background-position: center;
+}
+.top,.middle {
+  background-color: var(--section-overlay);
+  margin-bottom: 40px;
+}
+.searchInput {
+  padding: 8px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 6px;
+}
+.buttom {
+  background-color: var(--section-overlay);
+  margin-bottom: 20px;
+}
+.user-email {
+  word-wrap: break-word;
+}
