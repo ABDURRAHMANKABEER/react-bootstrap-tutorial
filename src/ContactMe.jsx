@@ -12,7 +12,7 @@ const ContactMe = () => {
                         <p>
                             I’d love to hear from you! Whether you have a project idea, collaboration opportunity, or just want to connect, feel free to reach out.
                         </p>
-                        <p className="m-0 mb-1">Email: abdurrahmankabeer200@gmail.com</p>
+                        <p className="m-0 mb-1">Email: abdurrahmankabeer2003@gmail.com</p>
                         <p className="m-0 mb-1">Phone: +2348107790414</p>
                         <p className="m-0 mb-1">LinkedIn: </p>
                         <p className="m-0 mb-1">GitHub: </p>
