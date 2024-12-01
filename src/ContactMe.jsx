@@ -14,8 +14,8 @@ const ContactMe = () => {
                         </p>
                         <p className="m-0 mb-1">Email: abdurrahmankabeer2003@gmail.com</p>
                         <p className="m-0 mb-1">Phone: +2348107790414</p>
-                        <p className="m-0 mb-1">LinkedIn: </p>
-                        <p className="m-0 mb-1">GitHub: </p>
+                        <p className="m-0 mb-1">LinkedIn: www.linkedin.com/in/abdurrahman-kabir-10580220b</p>
+                        <p className="m-0 mb-1">GitHub: https://github.com/ABDURRAHMANKABEER</p>
                     </div>
                     <p className="m-0 mb-1">Alternatively, you can fill out the contact form below, and I’ll get back to you as soon as possible.</p>
                     <Col xs={8} lg="6">
