@@ -17,7 +17,11 @@ const Mynavbar = () => {
                         <NavDropdown.Item href="/weatherApp">
                             Weather App
                         </NavDropdown.Item>
-                        </NavDropdown>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/reduxPractice">
+                            Redux Practice
+                        </NavDropdown.Item>
+                    </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
             </Container>

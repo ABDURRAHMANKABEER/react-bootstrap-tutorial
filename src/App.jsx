@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './Home'
@@ -9,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NewUser from './newUser'
 import ContactMe from './ContactMe'
 import WeatherApp from './weatherApp'
+import PracticeRedux from '../reducer practice'
 
 function App() {
 
@@ -24,6 +24,7 @@ function App() {
           <Route path='/usersList' element={<UsersList />} />
           <Route path='/user/:id' element={<UserDetails />}/>
           <Route path='/newUser' element={<NewUser />} />
+          <Route path='/reduxPractice' element={<PracticeRedux />} />
         </Routes>
       </div>
       </Router>

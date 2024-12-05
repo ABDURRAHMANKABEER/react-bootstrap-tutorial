@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom";
 import useFetch from "./useFetch";
-import { Container, Row, Col, Button, Breadcrumb, BreadcrumbItem } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
+import { connect } from "react-redux";
 
-const UsersList = () => {
-    const {data:userDetails, error} = useFetch("http://localhost:3000/Users");
+const UsersList = ({Users}) => {
 
     return (
         <>
             <Row className="container-fluid justify-content-center align-items-center">
                 <Col xs lg="6">
                     <h1 className="display-3 text-center text-secondary">Users List</h1>
-                    <div>{!userDetails && error}</div>
-                    <div>{!userDetails && <p>Loading...</p>}</div>
                     <Row className="mt-1 p-2 bg-primary text-light row justify-content-center align-items-center">
                         <Col>Name</Col>
                         <Col>Email</Col>
                         <Col>User Details</Col>
                     </Row>
-                    {userDetails && userDetails.map(user => (
+                    {Users.map(user => (
                         <div key={user.id}>
                             <Row className="p-2 bg-primary text-light row align-items-center">
                                 <Col xs={4}>{user.name}</Col>
@@ -38,5 +36,10 @@ const UsersList = () => {
         </>
     );
 }
+function mapStateToProps(state){
+    return {
+        Users: state.Users
+    }
+}
  
-export default UsersList;
+export default connect(mapStateToProps)(UsersList);
