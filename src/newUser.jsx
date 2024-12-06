@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from "react-redux";
 
 const NewUser = () => {
 
@@ -8,21 +10,13 @@ const NewUser = () => {
     const [email, setEmail] = useState('');
     const [description, setDescription] = useState('');
     const navigate = useNavigate();
-    const [addingUser, setAddingUser] = useState(false);
+    const dispatch = useDispatch();
 
     function handleSubmit(e){
 
         e.preventDefault();
-        const user = { name, email, description };
-        setAddingUser(true);
-
-        fetch("http://localhost:3000/Users", {
-            method: 'Post',
-            headers: {'Content-type': "application/json"},
-            body: JSON.stringify(user)
-        }).then(() => {
-            setAddingUser(false);
-        });
+        const user = { id: uuidv4(), name, email, description };
+        dispatch({ type: 'ADD_USER', user});
         navigate('/usersList');
     };
 
@@ -45,12 +39,11 @@ const NewUser = () => {
                         <Form.Label>Describe Your Self</Form.Label>
                         <Form.Control as="textarea" rows={3} value={description} onChange={e => setDescription(e.target.value)} required/>
                     </Form.Group>
-                    {!addingUser && <Button variant="primary" type="submit">Add User</Button>}
-                    {addingUser && <Button variant="primary" type="submit" disabled>Adding...</Button>}
+                    <Button variant="primary" type="submit">Add User</Button>
                 </Form>
             </Container>
         </>
     );
 }
- 
-export default NewUser;
+
+export default NewUser
