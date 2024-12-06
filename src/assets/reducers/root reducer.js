@@ -18,8 +18,11 @@ const initState = {
 function rootReducer(state = initState, action) {
     if(action.type === 'ADD_USER') {
         return {...state, Users: Users.push(action.user)};
+    } else if(action.type === 'DELETE_USER') {
+      const updatedUsers = state.Users.filter(user => user.id !== action.id);
+      return {...state, Users: updatedUsers}
     } else {
-        return state;
+      return state;
     }
 };
 export default rootReducer

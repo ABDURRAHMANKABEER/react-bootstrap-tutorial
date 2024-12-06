@@ -1,14 +1,15 @@
 import { Container, Button} from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate} from "react-router-dom";
 import { connect } from "react-redux";
 
-const UserDetails = ({User}) => {
+const UserDetails = (props) => {
 
+    const User = props.User;
 
     function handleDelete() {
-
+        props.delete(User.id);
         
-    }
+    };
 
     return (
         <>
@@ -38,5 +39,10 @@ function mapStateToProps(state){
         User: state.Users.find(user => user.id === id)
     }
 };
+function mapDispatchToProps(dispatch){
+    return {
+        delete: (id)=> dispatch({type: 'DELETE_USER', id: id})
+    };
+};
  
-export default connect(mapStateToProps)(UserDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(UserDetails);
