@@ -18,7 +18,7 @@ const WeatherApp = () => {
     const [imageUrl, setImageUrl] = useState(coldBg);
 
     useEffect(()=> {
-        const handleFetchedData = async (city, units) => {
+        const handleFetchedData = async (city, units= unit) => {
             const fetchData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_Key}&units=${units}`)
             .then(res => {
                 if(!res.ok) {
