@@ -8,7 +8,8 @@ const PracticeRedux = ({Users}) => {
         <>
             {Users.map((user) => (
                 <Container key={user.id}>
-                    {user.id}, {user.name}, {user.email} 
+                    {user.id}, {user.name}, {user.email}
+                    <p>how far</p>
                 </Container>
             ))}
         </>
