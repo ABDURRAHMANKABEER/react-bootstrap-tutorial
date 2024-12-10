@@ -1,7 +1,7 @@
 function weatherReducer(state = {}, action) {
-    console.log(action);
+
     if(action.type === 'SET_FORECAST') {
-        return {...state, data: action.data}
+        return {...action.data}
     }
     return state;
 };
